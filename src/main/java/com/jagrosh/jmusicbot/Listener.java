@@ -82,7 +82,9 @@ public class Listener extends ListenerAdapter
                         owner.openPrivateChannel().queue(pc -> pc.sendMessage(msg).queue());
                     }
                 }
-                catch(Exception ex) {} // ignored
+                catch(Exception ex) {
+                    System.out.printf(ex.getMessage());
+                } //NOT ignored
             }, 0, 24, TimeUnit.HOURS);
         }
     }

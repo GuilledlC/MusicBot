@@ -62,6 +62,7 @@ public class PlayCmd extends MusicCommand
     @Override
     public void doCommand(CommandEvent event) 
     {
+        event.reply("Ahora va wacho uouououou aaaaa");
         if(event.getArgs().isEmpty() && event.getMessage().getAttachments().isEmpty())
         {
             AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
@@ -113,7 +114,7 @@ public class PlayCmd extends MusicCommand
             }
             AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
             int pos = handler.addTrack(new QueuedTrack(track, event.getAuthor()))+1;
-            String addMsg = FormatUtil.filter(event.getClient().getSuccess()+" Added **"+track.getInfo().title
+            String addMsg = FormatUtil.filter(event.getClient().getSuccess()+" Aqui esta **"+track.getInfo().title
                     +"** (`"+FormatUtil.formatTime(track.getDuration())+"`) "+(pos==0?"to begin playing":" to the queue at position "+pos));
             if(playlist==null || !event.getSelfMember().hasPermission(event.getTextChannel(), Permission.MESSAGE_ADD_REACTION))
                 m.editMessage(addMsg).queue();

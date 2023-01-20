@@ -15,10 +15,7 @@
  */
 package com.jagrosh.jmusicbot.queue;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  *
@@ -106,7 +103,7 @@ public class FairQueue<T extends Queueable> {
     
     public int shuffle(long identifier)
     {
-        List<Integer> iset = new ArrayList<>();
+        /*List<Integer> iset = new ArrayList<>();
         for(int i=0; i<list.size(); i++)
         {
             if(list.get(i).getIdentifier()==identifier)
@@ -120,7 +117,10 @@ public class FairQueue<T extends Queueable> {
             list.set(first, list.get(second));
             list.set(second, temp);
         }
-        return iset.size();
+        return iset.size();*/
+
+        Collections.shuffle(list);
+        return list.size();
     }
     
     public void skip(int number)
